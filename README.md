@@ -22,11 +22,6 @@ calib_images/
 
 The `calib_images/` folder should contain approximately 300–500 representative images.
 
-Notes:
-
-* Labels are not required for calibration images.
-* Calibration images should match the real deployment environment.
-* For drone detection, include sky backgrounds, small drones, different lighting conditions, and negative samples.
 
 ### System
 
@@ -134,14 +129,6 @@ Example output:
 best.hef
 ```
 
-## Step 4: Transfer HEF to Raspberry Pi
-
-Replace `<RASPBERRY_PI_IP>` with the IP address of the Raspberry Pi:
-
-```bash
-scp best.hef vesalpi@<RASPBERRY_PI_IP>:/home/vesalpi/drone_inference/
-```
-
 ## Notes
 
 This guide assumes:
@@ -154,15 +141,3 @@ Class name: drone
 Target hardware: Hailo-8
 ```
 
-If using a different YOLOv8 model size, replace `yolov8n` in the compile command with the matching model type, such as:
-
-```bash
-hailomz compile yolov8s \
-  --ckpt best.onnx \
-  --hw-arch hailo8 \
-  --calib-path calib_images \
-  --classes 1
-```
-
-```
-```
