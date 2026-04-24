@@ -1,15 +1,13 @@
 # HAILO-Implementation
 
-````markdown
 # YOLOv8 to Hailo Conversion Guide for Raspberry Pi 5 AI HAT+
 
 This guide explains how to convert a trained YOLOv8n model into a Hailo `.hef` file for inference on Raspberry Pi 5 with AI HAT+ using Hailo-8.
 
 ## Pipeline Overview
 
-```text
 best.pt → best.onnx → best.hef → Raspberry Pi 5 Hailo inference
-````
+
 
 ## Requirements
 
